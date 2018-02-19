@@ -184,16 +184,16 @@
         var group = new osg.Node();
 
         var size = 250;
-        var background = getCubeMap( size, group );
+       // var background = getCubeMap( size, group );
 
         var texture = new osg.TextureCubeMap();
         texture.setTextureSize( 1, 1 );
 
-        var backgroundStateSet = background.getOrCreateStateSet();
-        backgroundStateSet.setAttributeAndModes( new osg.CullFace( 'DISABLE' ) );
-        backgroundStateSet.setAttributeAndModes( getShaderBackground() );
-        backgroundStateSet.setTextureAttributeAndModes( 0, texture );
-        backgroundStateSet.addUniform( osg.Uniform.createInt1( 0, 'Texture0' ) );
+        //var backgroundStateSet = background.getOrCreateStateSet();
+        //backgroundStateSet.setAttributeAndModes( new osg.CullFace( 'DISABLE' ) );
+        //backgroundStateSet.setAttributeAndModes( getShaderBackground() );
+        //backgroundStateSet.setTextureAttributeAndModes( 0, texture );
+       // backgroundStateSet.addUniform( osg.Uniform.createInt1( 0, 'Texture0' ) );
 
         var ground = getModel();
         var groundStateSet = ground.getOrCreateStateSet();
@@ -213,13 +213,13 @@
         ] ).then( function ( images ) {
 
             texture.setImage( 'TEXTURE_CUBE_MAP_POSITIVE_X', images[ 0 ] );
-            //texture.setImage( 'TEXTURE_CUBE_MAP_NEGATIVE_X', images[ 1 ] );
+            texture.setImage( 'TEXTURE_CUBE_MAP_NEGATIVE_X', images[ 1 ] );
 
             texture.setImage( 'TEXTURE_CUBE_MAP_POSITIVE_Y', images[ 2 ] );
-            //texture.setImage( 'TEXTURE_CUBE_MAP_NEGATIVE_Y', images[ 3 ] );
+            texture.setImage( 'TEXTURE_CUBE_MAP_NEGATIVE_Y', images[ 3 ] );
 
             texture.setImage( 'TEXTURE_CUBE_MAP_POSITIVE_Z', images[ 4 ] );
-            //texture.setImage( 'TEXTURE_CUBE_MAP_NEGATIVE_Z', images[ 5 ] );
+            texture.setImage( 'TEXTURE_CUBE_MAP_NEGATIVE_Z', images[ 5 ] );
 
             texture.setMinFilter( 'LINEAR_MIPMAP_LINEAR' );
         } );
@@ -239,7 +239,7 @@
         viewer.init();
         var rotate = new osg.MatrixTransform();
         rotate.addChild( createScene() );
-        viewer.getCamera().setClearColor( [ 0.0, 0.0, 0.0, 0.0 ] );
+        viewer.getCamera().setClearColor( [ 0.2, 0.2, 0.4, 0.0 ] );
         viewer.setSceneData( rotate );
         viewer.setupManipulator();
         viewer.getManipulator().computeHomePosition();
