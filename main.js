@@ -213,13 +213,13 @@
         ] ).then( function ( images ) {
 
             texture.setImage( 'TEXTURE_CUBE_MAP_POSITIVE_X', images[ 0 ] );
-            texture.setImage( 'TEXTURE_CUBE_MAP_NEGATIVE_X', images[ 1 ] );
+            //texture.setImage( 'TEXTURE_CUBE_MAP_NEGATIVE_X', images[ 1 ] );
 
             texture.setImage( 'TEXTURE_CUBE_MAP_POSITIVE_Y', images[ 2 ] );
-            texture.setImage( 'TEXTURE_CUBE_MAP_NEGATIVE_Y', images[ 3 ] );
+            //texture.setImage( 'TEXTURE_CUBE_MAP_NEGATIVE_Y', images[ 3 ] );
 
             texture.setImage( 'TEXTURE_CUBE_MAP_POSITIVE_Z', images[ 4 ] );
-            texture.setImage( 'TEXTURE_CUBE_MAP_NEGATIVE_Z', images[ 5 ] );
+            //texture.setImage( 'TEXTURE_CUBE_MAP_NEGATIVE_Z', images[ 5 ] );
 
             texture.setMinFilter( 'LINEAR_MIPMAP_LINEAR' );
         } );
