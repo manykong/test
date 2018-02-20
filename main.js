@@ -238,7 +238,11 @@
         Viewer = viewer;
         viewer.init();
         var rotate = new osg.MatrixTransform();
-        rotate.addChild( createScene() );
+        osgDB.readNodeURL( 'media/models/cow.osgjs' ).then( function ( model ) {  
+           rotate.addChild( model );  
+           //Viewer.getManipulator().computeHomePosition();    
+        } );
+        //rotate.addChild( createScene() );
         viewer.getCamera().setClearColor( [ 0.2, 0.2, 0.4, 0.0 ] );
         viewer.setSceneData( rotate );
         viewer.setupManipulator();
