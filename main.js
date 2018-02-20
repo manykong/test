@@ -243,7 +243,7 @@
            //Viewer.getManipulator().computeHomePosition();    
         } );
         //rotate.addChild( createScene() );
-        viewer.getCamera().setClearColor( [ 0.2, 0.2, 0.4, 0.0 ] );
+        viewer.getCamera().setClearColor( [ 0.2, 0.2, 0.4, 1.0 ] );
         viewer.setSceneData( rotate );
         viewer.setupManipulator();
         viewer.getManipulator().computeHomePosition();
